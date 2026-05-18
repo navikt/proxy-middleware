@@ -49,15 +49,15 @@ jobs:
           RESOURCE: .nais/app-dev.yaml
           VAR: image=${{ needs.build.outputs.image }}
 
-  deploy-prod:
-    needs: [build, deploy-dev]
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    environment: production
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: prod-gcp
-          RESOURCE: .nais/app-prod.yaml
-          VAR: image=${{ needs.build.outputs.image }}
+  # deploy-prod:
+  #   needs: [build, deploy-dev]
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 5
+  #   environment: production
+  #   steps:
+  #     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+  #     - uses: nais/deploy/actions/deploy@v2
+  #       env:
+  #         CLUSTER: prod-gcp
+  #         RESOURCE: .nais/app-prod.yaml
+  #         VAR: image=${{ needs.build.outputs.image }}
