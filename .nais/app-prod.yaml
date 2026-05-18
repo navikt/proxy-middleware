@@ -1,0 +1,51 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: proxy
+  namespace: oksty
+  labels:
+    team: oksty
+spec:
+  image: {{image}}
+  port: 8080
+
+  azure:
+    application:
+      enabled: true
+      tenant: nav.no
+
+  prometheus:
+    enabled: true
+    path: /internal/prometheus
+
+  liveness:
+    path: /internal/isalive
+    initialDelay: 10
+    timeout: 1
+  readiness:
+    path: /internal/isready
+    initialDelay: 10
+    timeout: 1
+
+  resources:
+    requests:
+      cpu: 15m
+      memory: 256Mi
+    limits:
+      memory: 512Mi
+
+  replicas:
+    min: 2
+    max: 4
+    cpuThresholdPercentage: 80
+
+  accessPolicy:
+    inbound:
+      rules: []
+    outbound:
+      external:
+        - host: api.ivalua.com
+
+  env:
+    - name: IVALUA_BASE_URL
+      value: "https://api.ivalua.com"
