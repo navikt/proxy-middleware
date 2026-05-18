@@ -9,6 +9,9 @@ spec:
   image: {{image}}
   port: 8080
 
+  ingress:
+    - https://proxy.intern.dev.nav.no
+
   azure:
     application:
       enabled: true
