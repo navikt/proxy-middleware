@@ -78,3 +78,5 @@ jobs:
   #         CLUSTER: prod-gcp
   #         RESOURCE: .nais/app-prod.yaml
   #         VAR: image=${{ needs.build.outputs.image }}
+
+# OSK-144 test
