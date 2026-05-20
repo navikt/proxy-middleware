@@ -32,14 +32,14 @@ spec:
 
   resources:
     requests:
-      cpu: 50m
+      cpu: 10m
       memory: 384Mi
     limits:
       memory: 768Mi
 
   replicas:
-    min: 2
-    max: 4
+    min: 1
+    max: 2
     cpuThresholdPercentage: 80
 
   accessPolicy:
