@@ -1,9 +1,9 @@
 package oksty.proxy.integration.ivalua;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * 🔴 RED ZONE — Write these tests BEFORE implementing IvaluaClient.
@@ -11,41 +11,27 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  */
 class IvaluaClientTest {
 
-    // TODO: Replace with a real RestClient mock when implementing
-    // For now these tests document expected behavior
-
     @Test
+    @Disabled("Pending IvaluaClient implementation")
     void getContracts_shouldReturnContractList() {
-        // TODO: When implemented, this should:
-        // - Call Ivalua GET /contracts endpoint
-        // - Return the response body as-is (or mapped)
-        // - Include pagination parameters
-        assertThat(true).as("Implement this test with mock RestClient").isTrue();
+        fail("Not yet implemented — call GET /contracts and assert response body");
     }
 
     @Test
+    @Disabled("Pending IvaluaClient implementation")
     void getContractById_shouldReturnSingleContract() {
-        // TODO: When implemented, this should:
-        // - Call Ivalua GET /contracts/{id}
-        // - Return 404 if not found
-        // - Return the contract JSON
-        assertThat(true).as("Implement this test with mock RestClient").isTrue();
+        fail("Not yet implemented — call GET /contracts/{id} and assert 404 when missing");
     }
 
     @Test
+    @Disabled("Pending IvaluaClient implementation")
     void getContracts_shouldHandleIvaluaServerError() {
-        // TODO: When Ivalua returns 500, what should we do?
-        // - Return 502 Bad Gateway?
-        // - Log the error with correlation ID?
-        // - Retry?
-        assertThat(true).as("Implement error handling test").isTrue();
+        fail("Not yet implemented — mock Ivalua 500 and assert 502 Bad Gateway");
     }
 
     @Test
+    @Disabled("Pending IvaluaClient implementation")
     void getContracts_shouldHandleIvaluaTimeout() {
-        // TODO: When Ivalua times out, what should we do?
-        // - Return 504 Gateway Timeout?
-        // - What is the timeout threshold?
-        assertThat(true).as("Implement timeout handling test").isTrue();
+        fail("Not yet implemented — mock timeout and assert 504 Gateway Timeout");
     }
 }
