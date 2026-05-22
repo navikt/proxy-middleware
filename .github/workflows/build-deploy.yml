@@ -46,6 +46,13 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify -Pcoverage org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 
+      - name: Upload OpenAPI spec
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: openapi-spec
+          path: target/openapi.json
+          if-no-files-found: warn
+
       - uses: nais/docker-build-push@751a312f0803eb96a05a41fadf51be19b7be362c # v0
         if: github.event_name == 'push'
         id: docker-build-push
