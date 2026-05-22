@@ -10,6 +10,7 @@ import org.springframework.web.client.RestClient;
 @Component
 public class IvaluaClient {
 
+    @SuppressWarnings("java:S1068") // Field will be used when methods are implemented
     private final RestClient restClient;
 
     public IvaluaClient(RestClient ivaluaRestClient) {

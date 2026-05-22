@@ -12,6 +12,7 @@ public class SecurityConfig {
 
     @Bean
     @Order(1)
+    @SuppressWarnings({"java:S112", "java:S1130"}) // HttpSecurity.build() declares throws Exception
     public SecurityFilterChain internalEndpoints(HttpSecurity http) throws Exception {
         return http
                 .securityMatcher("/internal/**")
@@ -22,6 +23,7 @@ public class SecurityConfig {
     @Bean
     @Order(2)
     @ConditionalOnProperty("spring.security.oauth2.resourceserver.jwt.issuer-uri")
+    @SuppressWarnings({"java:S112", "java:S1130"}) // HttpSecurity.build() declares throws Exception
     public SecurityFilterChain apiEndpoints(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
