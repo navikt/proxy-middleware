@@ -1,4 +1,4 @@
-package oksty.proxy.health;
+package oksty.proxy.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;

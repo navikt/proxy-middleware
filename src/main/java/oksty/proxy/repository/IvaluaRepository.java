@@ -1,19 +1,19 @@
-package oksty.proxy.integration.ivalua;
+package oksty.proxy.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestClient;
 
 /**
  * 🔴 RED ZONE — Core integration logic. Write this yourself to understand
  * the Ivalua API contract, error modes, and data mapping.
  */
-@Component
-public class IvaluaClient {
+@Repository
+public class IvaluaRepository {
 
     @SuppressWarnings("java:S1068") // Field will be used when methods are implemented
     private final RestClient restClient;
 
-    public IvaluaClient(RestClient ivaluaRestClient) {
+    public IvaluaRepository(RestClient ivaluaRestClient) {
         this.restClient = ivaluaRestClient;
     }
 

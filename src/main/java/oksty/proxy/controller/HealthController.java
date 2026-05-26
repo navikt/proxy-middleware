@@ -1,4 +1,4 @@
-package oksty.proxy.health;
+package oksty.proxy.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
